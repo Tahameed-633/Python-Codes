@@ -1,7 +1,7 @@
 import pandas as pd
 student={
-    "Name":["Farhan","Arisha","Shafin","Tasnim","Anisha"],
-    "Dept":["CSE","EEE","ECE","IPE","NAME"]
+    "Name":["Farhan","Arisha","Shafin","Tasnim","Anisha","Nusaiba","Dalim","Dure","Saif","Moin"],
+    "Dept":["CSE","EEE","ECE","IPE","NAME","CSE","EEE","CSE","ME", "IPE"],
 
 }
 df=pd.DataFrame(student)
@@ -14,6 +14,29 @@ print(df.iloc[2,0])
 print("Statistical Analysis:")
 print(df.describe())
 print("Add a new column:")
-df["CGPA"]=[3.50,3.06,3.50,4.00,2.76]
+df["CGPA"]=[3.50,3.06,3.50,4.00,2.76,3.25,3.76,4.00,3.09,3.65]
 print(df)
 print("Shape of the data frame",df.shape)
+print("First 5 rows")
+print(df.head())
+print("Last 5 rows")
+print(df.tail())
+print("Second row")
+print(df.loc[1])
+print("First row")
+print(df.iloc[0])
+print("Students with department:")
+print(df[["Name","Dept"]])
+print("First row first column:")
+print(df.loc[5,"Name"])
+print("Student's CGPA >3.50")
+print(df["CGPA"]>3.50)
+print("Students with CGPA above 3.50")
+print(df.query("CGPA>3.50"))
+print("Student's CGPA with ascending order:")
+print(df.sort_values(by="CGPA"))
+print("Student's CGPA with descending order:")
+print(df.sort_values(by="CGPA",ascending=False))
+print(df.count())
+df=pd.read_csv("student.csv")
+print(df)
